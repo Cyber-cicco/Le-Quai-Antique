@@ -1,0 +1,33 @@
+{% block main %}
+    <main>
+        <div class="navBarBuffer"></div>
+        <section class="headSection">
+            <div class="title">Nous contacter</div>
+        </section>
+        <section class="profilSection">
+            <div class="form">
+                <div class="title">Contacte :</div>
+                <div class="input-container ic1">
+                    <label for="name">Votre nom :</label>
+                    <input id="name" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                </div>
+                <div class="input-container ic1">
+                    <label for="e-mail">Votre mail :</label>
+                    <input id="e-mail" class="input" type="email" placeholder=" " />
+                    <div class="cut"></div>
+                </div>
+                <div class="input-container-textarea ic1">
+                    <label for="message">Votre message : </label>
+                    <textarea name="message" id="message" class="input" cols="30" rows="10"></textarea>
+                    <div class="cut"></div>
+                </div>
+
+                <div class="btn-container icl">
+                    <button class="btn-submit">Submit</button>
+                    <div class="cut"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+{%endblock%}

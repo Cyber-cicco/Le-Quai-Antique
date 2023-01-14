@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Le Quai Antique Chambery</title>
+    <meta name="description" content="Redécouvrez la cuisine de vos ancêtres dans ce restaurant gastronomique étoilé.">
+    <meta name="keywords" content="Restaurant, Gastronomique, Réserver, Diner, Déjeuner">
+    <meta name="author" content="Abel Ciccoli">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <nav id="navBar" class="navBar">
+        <div class="title">Le Quai Antique</div>
+        <li id="navList" class="navBar">
+            <ul>Accueil</ul>
+            <ul>Carte</ul>
+            <ul>Contact</ul>
+            <ul>Réserver</ul>
+            <ul><button class="profile"><img src="images/icons8-person-24.png"
+                        alt="icon made by https://icons8.com/icon/86320/person"></button></ul>
+        </li>
+        <div class="hamb">
+            <div class="hambline"></div>
+            <div class="hambline"></div>
+            <div class="hambline"></div>
+        </div>
+    </nav>
+    <div class="background"></div>
+    <main>
+        <div class="navBarBuffer"></div>
+        <section class="headSection">
+            <div class="title">lundi 12 décembre 2022</div>
+        </section>
+        <section class="reservSection">
+            <div class="form">
+                <div class="title">Réserver</div>
+                <div class="input-container ic1">
+                    <label for="name">Votre nom :</label>
+                    <input id="name" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                </div>
+                <div class="input-container ic">
+                    <label for="nbConvives">Nombre de convives : </label>
+                    <input id="nbConvives" class="input" type="number" placeholder=" " min="0" max="10" />
+                    <div class="cut"></div>
+                </div>
+                <div class="input-container ic">
+                    <label for="allergene">Préciser vos allergies : </label>
+                    <select name="allergene" id="allergene" class="input">
+                        <option value="none">Aucune</option>
+                        <option value="glu">Céréales contenant du gluten</option>
+                        <option value="crus">Curstacés</option>
+                        <option value="oeuf">Oeufs</option>
+                        <option value="pois">Poissons</option>
+                        <option value="arac">Arachides</option>
+                        <option value="soja">Soja</option>
+                        <option value="lait">Lait</option>
+                        <option value="fac">Fruits à coques</option>
+                        <option value="mout">Moutarde</option>
+                        <option value="cel">Céleri</option>
+                        <option value="ses">Graines de sésame</option>
+                        <option value="anhy">Anhydrides sulfureux</option>
+                        <option value="lup">Lupin</option>
+                        <option value="moll">Mollusques</option>
+
+                    </select>
+                    <div class="cut cut-short"></div>
+                </div>
+                <div class="resContainer">
+                    <label for="">Midi : </label>
+                    <div class="btnContainer">
+                        <button class="btnRes">11:30</button>
+                        <button class="btnRes">11:45</button>
+                        <button class="btnRes">12:00</button>
+                        <button class="btnRes">12:15</button>
+                        <button class="btnRes">12:30</button>
+                        <button class="btnRes">12:45</button>
+                        <button class="btnRes">13:00</button>
+                        <button class="btnRes">13:15</button>
+                        <button class="btnRes">13:30</button>
+                    </div>
+                </div>
+                <div class="resContainer">
+                    <label for="">Soir : </label>
+                    <div class="btnContainer">
+                        <button class="btnRes">19:00</button>
+                        <button class="btnRes">19:15</button>
+                        <button class="btnRes">19:30</button>
+                        <button class="btnRes">19:45</button>
+                        <button class="btnRes">20:00</button>
+                        <button class="btnRes">20:15</button>
+                        <button class="btnRes">20:30</button>
+                        <button class="btnRes">20:45</button>
+                        <button class="btnRes">21:15</button>
+                        <button class="btnRes">21:30</button>
+                        <button class="btnRes">21:45</button>
+                        <button class="btnRes">22:00</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>Ouvert ce jour entre 12h00 - 14h00 et 19h00 - 23h30</footer>
+</body>
+
+</html>

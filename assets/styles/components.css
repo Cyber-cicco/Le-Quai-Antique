@@ -1,0 +1,96 @@
+button {
+  display: flex;
+  height: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  color: #f5f8eb;
+  border-style: none;
+  border-color: #f5f8eb;
+  background-color: black;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 30px;
+}
+@media screen and (max-width: 1000px) {
+  button {
+    height: 150px;
+    font-size: 1.5em;
+    padding: 30px;
+  }
+}
+
+.profile {
+  background-color: #f5f8eb;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 0;
+}
+
+.btnProfile {
+  background-color: #0e292a;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 30px;
+}
+@media screen and (max-width: 1000px) {
+  .btnProfile {
+    background-color: #0e292a;
+    border-radius: 15px;
+    padding: 36px;
+    margin: 72px;
+  }
+}
+
+div.Carousel {
+  display: flex;
+  width: 50%;
+}
+@media screen and (max-width: 1000px) {
+  div.Carousel {
+    width: 100%;
+  }
+}
+
+div.photoHandler {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  padding-left: 50px;
+}
+div.photoHandler img {
+  max-width: 80%;
+  max-height: 550px;
+}
+
+@media screen and (max-width: 1000px) {
+  .link-container {
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  z-index: 5;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  align-items: center;
+}
+@media screen and (max-width: 1000px) {
+  footer {
+    height: 85px;
+    font-size: 1.3em;
+  }
+}/*# sourceMappingURL=components.css.map */
