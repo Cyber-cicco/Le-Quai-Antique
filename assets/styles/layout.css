@@ -156,6 +156,11 @@ main section.profilSection .title {
   }
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .subtitle {
   color: #eee;
   font-family: sans-serif;

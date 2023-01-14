@@ -10,6 +10,7 @@ class AccueilController extends AbstractController
 {
     /**
      * @Route("/accueil", name="app_accueil_ctrl")
+     * @Route("/")
      */
     public function index(): Response
     {

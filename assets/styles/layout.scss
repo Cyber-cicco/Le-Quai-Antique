@@ -187,7 +187,10 @@ main {
     margin-bottom: 20px;
 }
 
-
+a{
+    color :inherit;
+    text-decoration: inherit;
+}
 
 .subtitle {
     color: #eee;
