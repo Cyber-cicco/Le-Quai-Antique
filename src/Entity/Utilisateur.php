@@ -15,7 +15,7 @@ class Utilisateur
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue
      */
     private $id;
 
@@ -45,14 +45,29 @@ class Utilisateur
     private $reservations;
 
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Allergene", mappedBy="utilisateurs")
+    * @ORM\ManyToMany(targetEntity=Utilisateur::class, inversedBy="utilisateurs")
+     * @ORM\JoinTable(name="allergie")
      */
-    private Collection $allergenes;
+    private $allergenes;
 
-    public function __construct()
+    /**
+     * @param $id_utilisateur
+     * @param $motDePasse
+     * @param $isAdmin
+     * @param $nbConvives
+     * @param $reservations
+     * @param $allergenes
+     */
+    public function __construct($id_utilisateur=null, $motDePasse=null, $isAdmin=null, $nbConvives=null)
     {
+        $this->id_utilisateur = $id_utilisateur;
+        $this->motDePasse = $motDePasse;
+        $this->isAdmin = $isAdmin;
+        $this->nbConvives = $nbConvives;
         $this->reservations = new ArrayCollection();
+        $this->allergenes = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -70,6 +85,24 @@ class Utilisateur
 
         return $this;
     }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getAllergenes(): ArrayCollection
+    {
+        return $this->allergenes;
+    }
+
+    /**
+     * @param ArrayCollection $allergenes
+     */
+    public function setAllergenes(ArrayCollection $allergenes): void
+    {
+        $this->allergenes = $allergenes;
+    }
+
+
 
     public function getMotDePasse(): ?string
     {

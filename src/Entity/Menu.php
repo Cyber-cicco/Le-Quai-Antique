@@ -35,10 +35,18 @@ class Menu
      */
     private $formules;
 
-    public function __construct()
+    /**
+     * @param $nomMenu
+     * @param $description
+     * @param $formules
+     */
+    public function __construct($nomMenu = null, $description=null)
     {
+        $this->nomMenu = $nomMenu;
+        $this->description = $description;
         $this->formules = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {

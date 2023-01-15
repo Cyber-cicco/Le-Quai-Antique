@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\AllergeneRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -25,65 +26,64 @@ class Allergene
     private $nomAllergene;
 
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Plat", inversedBy="allergenes")
-     * @ORM\JoinTable(name="Plallergene")
+    * @ORM\ManyToMany(targetEntity="App\Entity\Plat")
     */
-    private Collection $plats;
+    private $plats;
 
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Utilisateur", inversedBy="allergenes")
-    * @ORM\JoinTable(name="Allergie")
+    * @ORM\ManyToMany(targetEntity="App\Entity\Utilisateur")
     */
-    private Collection $utilisateurs;
+    private $utilisateurs;
 
-    public function getId(): ?int
+    /**
+     * @param $nomAllergene
+     */
+    public function __construct($nomAllergene = null)
     {
+        $this->nomAllergene = $nomAllergene;
+        $this->plats = new ArrayCollection();
+    }
+
+
+    public function getId(): ?int{
         return $this->id;
     }
 
-    public function getNomAllergene(): ?string
-    {
+    public function getNomAllergene(): ?string{
         return $this->nomAllergene;
     }
 
-    public function setNomAllergene(string $nomAllergene): self
-    {
+    public function setNomAllergene(string $nomAllergene): self{
         $this->nomAllergene = $nomAllergene;
-
         return $this;
     }
 
     /**
      * @return Collection
      */
-    public function getUtilisateurs(): Collection
-    {
+    public function getUtilisateurs(): Collection{
         return $this->utilisateurs;
     }
 
     /**
      * @param Collection $utilisateurs
      */
-    public function setUtilisateurs(Collection $utilisateurs): void
-    {
+    public function setUtilisateurs(Collection $utilisateurs): void{
         $this->utilisateurs = $utilisateurs;
     }
 
     /**
      * @return Collection
      */
-    public function getPlats(): Collection
-    {
+    public function getPlats(): Collection{
         return $this->plats;
     }
 
     /**
      * @param Collection $plats
      */
-    public function setPlats(Collection $plats): void
-    {
+    public function setPlats(Collection $plats): void{
         $this->plats = $plats;
     }
-
 
 }

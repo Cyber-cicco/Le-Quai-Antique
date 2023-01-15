@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PlatRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -44,9 +45,43 @@ class Plat
     private $formules;
 
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Allergene", mappedBy="plats")
+    * @ORM\ManyToMany(targetEntity="App\Entity\Allergene", inversedBy="plats")
+     * @ORM\JoinTable(name="plat_allergene")
     */
-    private Collection $allergenes;
+    private $allergenes;
+
+    /**
+     * @param $nomPlat
+     * @param $description
+     * @param $prix
+     * @param $typePlat
+     * @param $formules
+     * @param $allergenes
+     */
+    public function __construct($nomPlat=null, $typePlat=null, $description=null, $prix=null)
+    {
+        $this->nomPlat = $nomPlat;
+        $this->description = $description;
+        $this->prix = $prix;
+        $this->typePlat = $typePlat;
+        $this->formules = new ArrayCollection();
+        $this->allergenes = new ArrayCollection();
+    }
+
+    /**
+     * @param $id
+     */
+
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getAllergenes(): ArrayCollection
+    {
+        return $this->allergenes;
+    }
+
+
 
     /**
      * @return mixed

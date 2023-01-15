@@ -22,42 +22,32 @@ class Reservation
      * @ORM\ManyToOne(targetEntity=Place::class, inversedBy="reservations")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $idTable;
+    private $table;
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="reservations")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $idUtilisateur;
+    private $utilisateur;
 
     /**
      * @ORM\Column(type="datetime")
      */
     private $dateReservation;
 
-    public function getIdTable(): ?Place
+    /**
+     * @param $idTable
+     * @param $idUtilisateur
+     * @param $dateReservation
+     */
+    public function __construct($table=null, $utilisateur=null, $dateReservation=null)
     {
-        return $this->idTable;
+        $this->table = $table;
+        $this->utilisateur = $utilisateur;
+        $this->dateReservation = $dateReservation;
     }
 
-    public function setIdTable(?Place $idTable): self
-    {
-        $this->idTable = $idTable;
 
-        return $this;
-    }
-
-    public function getIdUtilisateur(): ?Utilisateur
-    {
-        return $this->idUtilisateur;
-    }
-
-    public function setIdUtilisateur(?Utilisateur $idUtilisateur): self
-    {
-        $this->idUtilisateur = $idUtilisateur;
-
-        return $this;
-    }
 
     public function getDateReservation(): ?\DateTimeInterface
     {
@@ -70,4 +60,34 @@ class Reservation
 
         return $this;
     }
+
+    /**
+     * @return mixed|null
+     */
+    public function getTable(){
+        return $this->table;
+    }
+
+    /**
+     * @param mixed|null $table
+     */
+    public function setTable($table): void{
+        $this->table = $table;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getUtilisateur(){
+        return $this->utilisateur;
+    }
+
+    /**
+     * @param mixed|null $utilisateur
+     */
+    public function setUtilisateur($utilisateur): void {
+        $this->utilisateur = $utilisateur;
+    }
+
+
 }

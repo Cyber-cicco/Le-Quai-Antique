@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\FormuleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -40,9 +41,25 @@ class Formule
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Plat", inversedBy="formules")
-     * @ORM\JoinTable(name="Composition")
+     * @ORM\JoinTable(name="composition")
      */
     private $plats;
+
+    /**
+     * @param $nomFormule
+     * @param $description
+     * @param $prix
+     * @param $nomMenu
+     */
+    public function __construct($nomFormule = null, $description = null, $prix = null, $nomMenu=null)
+    {
+        $this->nomFormule = $nomFormule;
+        $this->description = $description;
+        $this->prix = $prix;
+        $this->nomMenu = $nomMenu;
+        $this->plats = new ArrayCollection();
+    }
+
 
     /**
      * @return mixed

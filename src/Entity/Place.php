@@ -34,10 +34,18 @@ class Place
      */
     private $reservations;
 
-    public function __construct()
+    /**
+     * @param $nb_places
+     * @param $restaurant
+     * @param $reservations
+     */
+    public function __construct($nb_places=null, $restaurant=null)
     {
+        $this->nb_places = $nb_places;
+        $this->restaurant = $restaurant;
         $this->reservations = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -57,7 +65,6 @@ class Place
     }
 
     /**
-     * @return Collection<int, Reservation>
      */
     public function getReservations(): Collection
     {

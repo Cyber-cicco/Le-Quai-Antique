@@ -1045,15 +1045,15 @@ restaurant|schema||user2|localhost|UPDATE|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="328" parent="325" name="Composition">
+    <table id="328" parent="325" name="Plallergene">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="329" parent="325" name="Plallergene">
+    <table id="329" parent="325" name="allergene">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="330" parent="325" name="allergene">
+    <table id="330" parent="325" name="composition">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
@@ -1134,7 +1134,7 @@ utilisateur_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="348" parent="328" name="formule_id">
+    <column id="348" parent="328" name="allergene_id">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1144,29 +1144,29 @@ utilisateur_id</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="350" parent="328" name="FK_8AE3CC902A68F4D1">
-      <ColNames>formule_id</ColNames>
+    <foreign-key id="350" parent="328" name="FK_ADC8B67D4646AB2">
+      <ColNames>allergene_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
-      <RefTableName>formule</RefTableName>
+      <RefTableName>allergene</RefTableName>
     </foreign-key>
-    <foreign-key id="351" parent="328" name="FK_8AE3CC90D73DB560">
+    <foreign-key id="351" parent="328" name="FK_ADC8B67DD73DB560">
       <ColNames>plat_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>id</RefColNames>
       <RefTableName>plat</RefTableName>
     </foreign-key>
     <index id="352" parent="328" name="PRIMARY">
-      <ColNames>formule_id
+      <ColNames>allergene_id
 plat_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="353" parent="328" name="IDX_8AE3CC902A68F4D1">
-      <ColNames>formule_id</ColNames>
+    <index id="353" parent="328" name="IDX_ADC8B67D4646AB2">
+      <ColNames>allergene_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="354" parent="328" name="IDX_8AE3CC90D73DB560">
+    <index id="354" parent="328" name="IDX_ADC8B67DD73DB560">
       <ColNames>plat_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1175,62 +1175,62 @@ plat_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="356" parent="329" name="allergene_id">
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="357" parent="329" name="plat_id">
-      <DasType>int(11)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <foreign-key id="358" parent="329" name="FK_ADC8B67D4646AB2">
-      <ColNames>allergene_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>allergene</RefTableName>
-    </foreign-key>
-    <foreign-key id="359" parent="329" name="FK_ADC8B67DD73DB560">
-      <ColNames>plat_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>id</RefColNames>
-      <RefTableName>plat</RefTableName>
-    </foreign-key>
-    <index id="360" parent="329" name="PRIMARY">
-      <ColNames>allergene_id
-plat_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="361" parent="329" name="IDX_ADC8B67D4646AB2">
-      <ColNames>allergene_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="362" parent="329" name="IDX_ADC8B67DD73DB560">
-      <ColNames>plat_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="363" parent="329" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="364" parent="330" name="id">
+    <column id="356" parent="329" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="365" parent="330" name="nom_allergene">
+    <column id="357" parent="329" name="nom_allergene">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="366" parent="330" name="PRIMARY">
+    <index id="358" parent="329" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
+    </index>
+    <key id="359" parent="329" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="360" parent="330" name="formule_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="361" parent="330" name="plat_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="362" parent="330" name="FK_C7F43472A68F4D1">
+      <ColNames>formule_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>formule</RefTableName>
+    </foreign-key>
+    <foreign-key id="363" parent="330" name="FK_C7F4347D73DB560">
+      <ColNames>plat_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>plat</RefTableName>
+    </foreign-key>
+    <index id="364" parent="330" name="PRIMARY">
+      <ColNames>formule_id
+plat_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="365" parent="330" name="IDX_C7F43472A68F4D1">
+      <ColNames>formule_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="366" parent="330" name="IDX_C7F4347D73DB560">
+      <ColNames>plat_id</ColNames>
+      <Type>btree</Type>
     </index>
     <key id="367" parent="330" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

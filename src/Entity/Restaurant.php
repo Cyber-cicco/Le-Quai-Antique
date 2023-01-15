@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RestaurantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -26,6 +27,21 @@ class Restaurant {
      * @ORM\OneToMany(targetEntity="App\Entity\Place", mappedBy="restaurant")
     */
     private $tables;
+
+    /**
+     * @param $nom_restaurant
+     */
+    public function __construct($nom_restaurant)
+    {
+        $this->nom_restaurant = $nom_restaurant;
+        $this->tables = new ArrayCollection();
+    }
+
+    /**
+     * @param $tables
+     */
+
+
 
     public function getIdRestaurant(): ?int
     {
