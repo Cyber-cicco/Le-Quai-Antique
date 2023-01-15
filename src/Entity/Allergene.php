@@ -13,7 +13,13 @@ class Allergene
 {
 
     /**
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $nomAllergene;

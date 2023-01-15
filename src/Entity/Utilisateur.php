@@ -12,10 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Utilisateur
 {
-
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
     /**
-     * @ORM\Id
      * @ORM\Column(type="string", length=320)
      */
     private $id_utilisateur;

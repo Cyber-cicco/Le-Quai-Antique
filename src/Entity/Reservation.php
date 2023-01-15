@@ -11,23 +11,26 @@ use Doctrine\ORM\Mapping\Id;
  */
 class Reservation
 {
+    /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Place::class, inversedBy="reservations")
      * @ORM\JoinColumn(nullable=false)
      */
     private $idTable;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="reservations")
      * @ORM\JoinColumn(nullable=false)
      */
     private $idUtilisateur;
 
     /**
-     * @ORM\Id
      * @ORM\Column(type="datetime")
      */
     private $dateReservation;

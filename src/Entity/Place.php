@@ -17,7 +17,7 @@ class Place
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id_place;
+    private $id;
 
     /**
      * @ORM\Column(type="integer")

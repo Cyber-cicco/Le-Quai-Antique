@@ -1041,377 +1041,522 @@ restaurant|schema||user2|localhost|UPDATE|G</Grants>
     <user id="326" parent="1" name="user2">
       <Host>localhost</Host>
     </user>
-    <table id="327" parent="325" name="Allergene">
+    <table id="327" parent="325" name="Allergie">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="328" parent="325" name="Allergie">
+    <table id="328" parent="325" name="Composition">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="329" parent="325" name="Composition">
+    <table id="329" parent="325" name="Plallergene">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="330" parent="325" name="Formule">
+    <table id="330" parent="325" name="allergene">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="331" parent="325" name="Menu">
+    <table id="331" parent="325" name="doctrine_migration_versions">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8_unicode_ci</CollationName>
     </table>
-    <table id="332" parent="325" name="Place">
+    <table id="332" parent="325" name="formule">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="333" parent="325" name="Plallergene">
+    <table id="333" parent="325" name="menu">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="334" parent="325" name="Plat">
+    <table id="334" parent="325" name="messenger_messages">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="335" parent="325" name="Reservation">
+    <table id="335" parent="325" name="place">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="336" parent="325" name="Restaurant">
+    <table id="336" parent="325" name="plat">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <table id="337" parent="325" name="Utilisateur">
+    <table id="337" parent="325" name="reservation">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_general_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <column id="338" parent="327" name="nom_allergene">
-      <DasType>varchar(255)|0s</DasType>
+    <table id="338" parent="325" name="restaurant">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="339" parent="325" name="utilisateur">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <column id="340" parent="327" name="allergene_id">
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <index id="339" parent="327" name="PRIMARY">
-      <ColNames>nom_allergene</ColNames>
+    <column id="341" parent="327" name="utilisateur_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="342" parent="327" name="FK_E7AEFC1C4646AB2">
+      <ColNames>allergene_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>allergene</RefTableName>
+    </foreign-key>
+    <foreign-key id="343" parent="327" name="FK_E7AEFC1CFB88E14F">
+      <ColNames>utilisateur_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>utilisateur</RefTableName>
+    </foreign-key>
+    <index id="344" parent="327" name="PRIMARY">
+      <ColNames>allergene_id
+utilisateur_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="340" parent="327" name="PRIMARY">
+    <index id="345" parent="327" name="IDX_E7AEFC1C4646AB2">
+      <ColNames>allergene_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="346" parent="327" name="IDX_E7AEFC1CFB88E14F">
+      <ColNames>utilisateur_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="347" parent="327" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="341" parent="328" name="id_utilisateur">
-      <DasType>varchar(320)|0s</DasType>
+    <column id="348" parent="328" name="formule_id">
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="342" parent="328" name="nom_allergene">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="349" parent="328" name="plat_id">
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="343" parent="328" name="Allergie_ibfk_1">
-      <ColNames>id_utilisateur</ColNames>
-      <RefColNames>id_utilisateur</RefColNames>
-      <RefTableName>Utilisateur</RefTableName>
+    <foreign-key id="350" parent="328" name="FK_8AE3CC902A68F4D1">
+      <ColNames>formule_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>formule</RefTableName>
     </foreign-key>
-    <foreign-key id="344" parent="328" name="Allergie_ibfk_2">
-      <ColNames>nom_allergene</ColNames>
-      <RefColNames>nom_allergene</RefColNames>
-      <RefTableName>Allergene</RefTableName>
+    <foreign-key id="351" parent="328" name="FK_8AE3CC90D73DB560">
+      <ColNames>plat_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>plat</RefTableName>
     </foreign-key>
-    <index id="345" parent="328" name="PRIMARY">
-      <ColNames>id_utilisateur
-nom_allergene</ColNames>
+    <index id="352" parent="328" name="PRIMARY">
+      <ColNames>formule_id
+plat_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="346" parent="328" name="nom_allergene">
-      <ColNames>nom_allergene</ColNames>
+    <index id="353" parent="328" name="IDX_8AE3CC902A68F4D1">
+      <ColNames>formule_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="347" parent="328" name="PRIMARY">
+    <index id="354" parent="328" name="IDX_8AE3CC90D73DB560">
+      <ColNames>plat_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="355" parent="328" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="348" parent="329" name="nom_formule">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="356" parent="329" name="allergene_id">
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="349" parent="329" name="nom_plat">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="357" parent="329" name="plat_id">
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="350" parent="329" name="Composition_ibfk_1">
-      <ColNames>nom_formule</ColNames>
-      <RefColNames>nom_formule</RefColNames>
-      <RefTableName>Formule</RefTableName>
+    <foreign-key id="358" parent="329" name="FK_ADC8B67D4646AB2">
+      <ColNames>allergene_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>allergene</RefTableName>
     </foreign-key>
-    <foreign-key id="351" parent="329" name="Composition_ibfk_2">
-      <ColNames>nom_plat</ColNames>
-      <RefColNames>nom_plat</RefColNames>
-      <RefTableName>Plat</RefTableName>
+    <foreign-key id="359" parent="329" name="FK_ADC8B67DD73DB560">
+      <ColNames>plat_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>plat</RefTableName>
     </foreign-key>
-    <index id="352" parent="329" name="PRIMARY">
-      <ColNames>nom_formule
-nom_plat</ColNames>
+    <index id="360" parent="329" name="PRIMARY">
+      <ColNames>allergene_id
+plat_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="353" parent="329" name="nom_plat">
-      <ColNames>nom_plat</ColNames>
+    <index id="361" parent="329" name="IDX_ADC8B67D4646AB2">
+      <ColNames>allergene_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="354" parent="329" name="PRIMARY">
+    <index id="362" parent="329" name="IDX_ADC8B67DD73DB560">
+      <ColNames>plat_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="363" parent="329" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="355" parent="330" name="nom_formule">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="364" parent="330" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="356" parent="330" name="description">
+    <column id="365" parent="330" name="nom_allergene">
       <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="357" parent="330" name="prix">
-      <DasType>decimal(8,2 digit)|0s</DasType>
+    <index id="366" parent="330" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="367" parent="330" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="368" parent="331" name="version">
+      <DasType>varchar(191)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="369" parent="331" name="executed_at">
+      <DasType>datetime|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="370" parent="331" name="execution_time">
+      <DasType>int(11)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="371" parent="331" name="PRIMARY">
+      <ColNames>version</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="372" parent="331" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="373" parent="332" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="374" parent="332" name="nom_menu_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="375" parent="332" name="nom_formule">
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="358" parent="330" name="nom_menu">
+    <column id="376" parent="332" name="description">
       <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="377" parent="332" name="prix">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="378" parent="332" name="FK_605C9C983958E2DA">
+      <ColNames>nom_menu_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>menu</RefTableName>
+    </foreign-key>
+    <index id="379" parent="332" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="380" parent="332" name="IDX_605C9C983958E2DA">
+      <ColNames>nom_menu_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="381" parent="332" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="382" parent="333" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="383" parent="333" name="nom_menu">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="384" parent="333" name="description">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="385" parent="333" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="386" parent="333" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="387" parent="334" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint(20)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="388" parent="334" name="body">
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="389" parent="334" name="headers">
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="390" parent="334" name="queue_name">
+      <DasType>varchar(190)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="359" parent="330" name="Formule_ibfk_1">
-      <ColNames>nom_menu</ColNames>
-      <RefColNames>nom_menu</RefColNames>
-      <RefTableName>Menu</RefTableName>
-    </foreign-key>
-    <index id="360" parent="330" name="PRIMARY">
-      <ColNames>nom_formule
-nom_menu</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="361" parent="330" name="nom_menu">
-      <ColNames>nom_menu</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="362" parent="330" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="363" parent="331" name="nom_menu">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="364" parent="331" name="description">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <index id="365" parent="331" name="PRIMARY">
-      <ColNames>nom_menu</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="366" parent="331" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="367" parent="332" name="id_table">
-      <DasType>decimal(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="368" parent="332" name="nb_places">
-      <DasType>decimal(3)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="369" parent="332" name="id_restaurant">
-      <DasType>decimal(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="370" parent="332" name="Place_ibfk_1">
-      <ColNames>id_restaurant</ColNames>
-      <RefColNames>id_restaurant</RefColNames>
-      <RefTableName>Restaurant</RefTableName>
-    </foreign-key>
-    <index id="371" parent="332" name="PRIMARY">
-      <ColNames>id_table</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="372" parent="332" name="id_restaurant">
-      <ColNames>id_restaurant</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="373" parent="332" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="374" parent="333" name="nom_plat">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="375" parent="333" name="nom_allergene">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <foreign-key id="376" parent="333" name="Plallergene_ibfk_1">
-      <ColNames>nom_plat</ColNames>
-      <RefColNames>nom_plat</RefColNames>
-      <RefTableName>Plat</RefTableName>
-    </foreign-key>
-    <foreign-key id="377" parent="333" name="Plallergene_ibfk_2">
-      <ColNames>nom_allergene</ColNames>
-      <RefColNames>nom_allergene</RefColNames>
-      <RefTableName>Allergene</RefTableName>
-    </foreign-key>
-    <index id="378" parent="333" name="PRIMARY">
-      <ColNames>nom_plat
-nom_allergene</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="379" parent="333" name="nom_allergene">
-      <ColNames>nom_allergene</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="380" parent="333" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="381" parent="334" name="nom_plat">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="382" parent="334" name="type_plat">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="383" parent="334" name="description">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="384" parent="334" name="prix">
-      <DasType>decimal(8,2 digit)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <index id="385" parent="334" name="PRIMARY">
-      <ColNames>nom_plat</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="386" parent="334" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="387" parent="335" name="id_table">
-      <DasType>decimal(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="388" parent="335" name="id_utilisateur">
-      <DasType>varchar(320)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="389" parent="335" name="date_reservation">
+    <column id="391" parent="334" name="created_at">
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
-      <Position>3</Position>
+      <Position>5</Position>
     </column>
-    <foreign-key id="390" parent="335" name="Reservation_ibfk_1">
-      <ColNames>id_table</ColNames>
-      <RefColNames>id_table</RefColNames>
-      <RefTableName>Place</RefTableName>
-    </foreign-key>
-    <foreign-key id="391" parent="335" name="Reservation_ibfk_2">
-      <ColNames>id_utilisateur</ColNames>
-      <RefColNames>id_utilisateur</RefColNames>
-      <RefTableName>Utilisateur</RefTableName>
-    </foreign-key>
-    <index id="392" parent="335" name="PRIMARY">
-      <ColNames>id_table
-id_utilisateur
-date_reservation</ColNames>
+    <column id="392" parent="334" name="available_at">
+      <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="393" parent="334" name="delivered_at">
+      <DasType>datetime|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <index id="394" parent="334" name="PRIMARY">
+      <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="393" parent="335" name="id_utilisateur">
-      <ColNames>id_utilisateur</ColNames>
+    <index id="395" parent="334" name="IDX_75EA56E0FB7336F0">
+      <ColNames>queue_name</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="394" parent="335" name="PRIMARY">
+    <index id="396" parent="334" name="IDX_75EA56E0E3BD61CE">
+      <ColNames>available_at</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="397" parent="334" name="IDX_75EA56E016BA31DB">
+      <ColNames>delivered_at</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="398" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="395" parent="336" name="id_restaurant">
-      <DasType>decimal(6)|0s</DasType>
+    <column id="399" parent="335" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="396" parent="336" name="nom_restaurant">
+    <column id="400" parent="335" name="restaurant_id">
+      <DasType>int(11)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="401" parent="335" name="nb_places">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="402" parent="335" name="FK_741D53CDB1E7706E">
+      <ColNames>restaurant_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>restaurant</RefTableName>
+    </foreign-key>
+    <index id="403" parent="335" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="404" parent="335" name="IDX_741D53CDB1E7706E">
+      <ColNames>restaurant_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="405" parent="335" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="406" parent="336" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="407" parent="336" name="nom_plat">
       <DasType>varchar(255)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <index id="397" parent="336" name="PRIMARY">
-      <ColNames>id_restaurant</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="398" parent="336" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="399" parent="337" name="id_utilisateur">
-      <DasType>varchar(320)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="400" parent="337" name="mot_de_passe">
-      <DasType>varchar(60)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="401" parent="337" name="is_admin">
-      <DasType>tinyint(1)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="408" parent="336" name="description">
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="402" parent="337" name="nb_convives">
-      <DasType>decimal(2)|0s</DasType>
+    <column id="409" parent="336" name="prix">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="403" parent="337" name="PRIMARY">
-      <ColNames>id_utilisateur</ColNames>
+    <column id="410" parent="336" name="type_plat">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="411" parent="336" name="PRIMARY">
+      <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="404" parent="337" name="PRIMARY">
+    <key id="412" parent="336" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="413" parent="337" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="414" parent="337" name="id_table_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="415" parent="337" name="id_utilisateur_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="416" parent="337" name="date_reservation">
+      <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="417" parent="337" name="FK_42C84955BC24C4C9">
+      <ColNames>id_table_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>place</RefTableName>
+    </foreign-key>
+    <foreign-key id="418" parent="337" name="FK_42C84955C6EE5C49">
+      <ColNames>id_utilisateur_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>utilisateur</RefTableName>
+    </foreign-key>
+    <index id="419" parent="337" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="420" parent="337" name="IDX_42C84955BC24C4C9">
+      <ColNames>id_table_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="421" parent="337" name="IDX_42C84955C6EE5C49">
+      <ColNames>id_utilisateur_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="422" parent="337" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="423" parent="338" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="424" parent="338" name="nom_restaurant">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <index id="425" parent="338" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="426" parent="338" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="427" parent="339" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="428" parent="339" name="id_utilisateur">
+      <DasType>varchar(320)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="429" parent="339" name="mot_de_passe">
+      <DasType>varchar(64)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="430" parent="339" name="is_admin">
+      <DasType>tinyint(1)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="431" parent="339" name="nb_convives">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="432" parent="339" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="433" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

@@ -11,11 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Restaurant {
 
     /**
-     * @ORM\Id()
+     * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id_restaurant;
+    private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
