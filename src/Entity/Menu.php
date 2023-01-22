@@ -87,11 +87,7 @@ class Menu
 
     public function addFormule(Formule $formule): self
     {
-        if (!$this->formules->contains($formule)) {
-            $this->formules[] = $formule;
-            $formule->setNomMenu($this);
-        }
-
+        $this->formules.add($formule);
         return $this;
     }
 
@@ -99,8 +95,8 @@ class Menu
     {
         if ($this->formules->removeElement($formule)) {
             // set the owning side to null (unless already changed)
-            if ($formule->getNomMenu() === $this) {
-                $formule->setNomMenu(null);
+            if ($formule->getMenu() === $this) {
+                $formule->setMenu(null);
             }
         }
 

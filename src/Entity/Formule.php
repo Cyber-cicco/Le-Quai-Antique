@@ -37,7 +37,7 @@ class Formule
      * @ORM\ManyToOne(targetEntity=Menu::class, inversedBy="formules")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $nomMenu;
+    private $menu;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Plat", inversedBy="formules")
@@ -51,12 +51,12 @@ class Formule
      * @param $prix
      * @param $nomMenu
      */
-    public function __construct($nomFormule = null, $description = null, $prix = null, $nomMenu=null)
+    public function __construct($nomFormule = null, $description = null, $prix = null, $menu=null)
     {
         $this->nomFormule = $nomFormule;
         $this->description = $description;
         $this->prix = $prix;
-        $this->nomMenu = $nomMenu;
+        $this->menu = $menu;
         $this->plats = new ArrayCollection();
     }
 
@@ -120,14 +120,14 @@ class Formule
         return $this;
     }
 
-    public function getNomMenu(): ?Menu
+    public function getMenu(): ?Menu
     {
-        return $this->nomMenu;
+        return $this->menu;
     }
 
-    public function setNomMenu(?Menu $nomMenu): self
+    public function setMenu(?Menu $menu): self
     {
-        $this->nomMenu = $nomMenu;
+        $this->menu = $menu;
 
         return $this;
     }

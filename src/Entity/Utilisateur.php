@@ -45,7 +45,7 @@ class Utilisateur
     private $reservations;
 
     /**
-    * @ORM\ManyToMany(targetEntity=Utilisateur::class, inversedBy="utilisateurs")
+     * @ORM\ManyToMany(targetEntity=Allergene::class, inversedBy="utilisateurs")
      * @ORM\JoinTable(name="allergie")
      */
     private $allergenes;

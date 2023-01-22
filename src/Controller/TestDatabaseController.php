@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Allergene;
+use App\Entity\Formule;
+use App\Entity\Menu;
 use App\Entity\Place;
 use App\Entity\Utilisateur;
 use App\Entity\Plat;
 use \Doctrine\Common\Collections\ArrayCollection;
-use Monolog\Handler\Curl\Util;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -90,6 +91,52 @@ class TestDatabaseController extends AbstractController
         $users[2]->setAllergenes(new ArrayCollection([$allergenes[5], $allergenes[10], $allergenes[12]]));
         $users[3]->setAllergenes(new ArrayCollection([$allergenes[6], $allergenes[3]]));
         $users[4]->setAllergenes(new ArrayCollection([$allergenes[8], $allergenes[9], $allergenes[13], $allergenes[1]]));
+
+        $plats[0]->setAllergenes(new ArrayCollection([$allergenes[0], $allergenes[8], $allergenes[0]]));
+        $plats[1]->setAllergenes(new ArrayCollection([$allergenes[4], $allergenes[9], $allergenes[1]]));
+        $plats[2]->setAllergenes(new ArrayCollection([$allergenes[5], $allergenes[10], $allergenes[2]]));
+        $plats[3]->setAllergenes(new ArrayCollection([$allergenes[6], $allergenes[11], $allergenes[3]]));
+        $plats[4]->setAllergenes(new ArrayCollection([$allergenes[7], $allergenes[12], $allergenes[4]]));
+        $plats[5]->setAllergenes(new ArrayCollection([$allergenes[8], $allergenes[0], $allergenes[5]]));
+        $plats[6]->setAllergenes(new ArrayCollection([$allergenes[9], $allergenes[1], $allergenes[6]]));
+        $plats[7]->setAllergenes(new ArrayCollection([$allergenes[10], $allergenes[2], $allergenes[7]]));
+        $plats[8]->setAllergenes(new ArrayCollection([$allergenes[11], $allergenes[3], $allergenes[8]]));
+        $plats[9]->setAllergenes(new ArrayCollection([$allergenes[12], $allergenes[4], $allergenes[9]]));
+        $plats[10]->setAllergenes(new ArrayCollection([$allergenes[0], $allergenes[5], $allergenes[10]]));
+        $plats[11]->setAllergenes(new ArrayCollection([$allergenes[1], $allergenes[6], $allergenes[11]]));
+        $plats[12]->setAllergenes(new ArrayCollection([$allergenes[2], $allergenes[7], $allergenes[12]]));
+        $plats[13]->setAllergenes(new ArrayCollection([$allergenes[3], $allergenes[8], $allergenes[0]]));
+        $plats[14]->setAllergenes(new ArrayCollection([$allergenes[4], $allergenes[9], $allergenes[1]]));
+        $plats[15]->setAllergenes(new ArrayCollection([$allergenes[5], $allergenes[10], $allergenes[2]]));
+        $plats[16]->setAllergenes(new ArrayCollection([$allergenes[6], $allergenes[11], $allergenes[3]]));
+        $plats[17]->setAllergenes(new ArrayCollection([$allergenes[7], $allergenes[12], $allergenes[4]]));
+
+        $menus = [
+            new Menu('menu1', 'C\'est un menu, et il est bon'),
+            new Menu('menu2', 'C\'est un menu, et il est bon'),
+            new Menu('menu3', 'C\'est un menu, et il est bon'),
+            new Menu('menu4', 'C\'est un menu, et il est bon'),
+            new Menu('menu5', 'C\'est un menu, et il est bon'),
+            new Menu('menu6', 'C\'est un menu, et il est bon')
+        ];
+
+        $formules = [
+            new Formule('formule1', 'vrooooooooooooooooooooooooooooom', 22.50, $menus[0]),
+            new Formule('formule2', 'C\'est une formule', 29.99, $menus[0]),
+            new Formule('formule3', 'C\'est une formule', 19.99, $menus[1]),
+            new Formule('formule4', 'C\'est une formule', 14.99, $menus[1]),
+            new Formule('formule5', 'C\'est une formule', 22.50, $menus[2]),
+            new Formule('formule6', 'C\'est une formule', 20.50, $menus[2]),
+            new Formule('formule7', 'C\'est une formule', 19.50, $menus[2]),
+            new Formule('formule8', 'C\'est une formule', 25.50, $menus[3]),
+            new Formule('formule9', 'C\'est une formule', 24.50, $menus[3]),
+            new Formule('formule10', 'C\'est une formule', 33.50, $menus[4]),
+            new Formule('formule9', 'C\'est une formule', 38.50, $menus[4]),
+            new Formule('formule11', 'C\'est une formule', 18.50, $menus[5]),
+            new Formule('formule12', 'C\'est une formule', 21.50,$menus[5])
+        ];
+
+        $formules[0]->setPlats();
 
 
 

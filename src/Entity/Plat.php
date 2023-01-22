@@ -81,6 +81,10 @@ class Plat
         return $this->allergenes;
     }
 
+    public function setAllergenes(ArrayCollection $allergenes)
+    {
+        $this->allergenes = $allergenes;
+    }
 
 
     /**

@@ -26,12 +26,12 @@ class Allergene
     private $nomAllergene;
 
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Plat")
+    * @ORM\ManyToMany(targetEntity="App\Entity\Plat", mappedBy="allergenes")
     */
     private $plats;
 
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Utilisateur")
+    * @ORM\ManyToMany(targetEntity="App\Entity\Utilisateur", mappedBy="allergenes")
     */
     private $utilisateurs;
 
@@ -75,7 +75,7 @@ class Allergene
     /**
      * @return Collection
      */
-    public function getPlats(): Collection{
+    public function getPlats() {
         return $this->plats;
     }
 
